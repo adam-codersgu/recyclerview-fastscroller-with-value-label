@@ -1,4 +1,4 @@
-package com.codersguidebook.recyclerviewfastscrollerwithvaluelabel
+package com.codersguidebook.recyclerview_fastscroller_with_value_label
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
