@@ -40,8 +40,20 @@ android {
     }
 
     publishing {
-        singleVariant("release") {
+        singleVariant('release') {
             withSourcesJar()
+        }
+
+        publications {
+            release(MavenPublication) {
+                groupId = 'com.codersguidebook'
+                artifactId = 'recyclerview_fastscroller_with_value_label'
+                version = '1.0'
+
+                afterEvaluate {
+                    from components.release
+                }
+            }
         }
     }
 }
