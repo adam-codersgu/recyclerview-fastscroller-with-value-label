@@ -20,20 +20,6 @@ import kotlin.math.roundToInt
  * A custom View that displays a scrollbar for RecyclerView widgets. The scrollbar features a draggable thumb
  * and value label.
  *
- *  FOR LIBRARY RELEASE:
- *   - Will need to create a test app that uses the library and confirm it works as a standalone library
- *   - The RecyclerView adapter must implement RecyclerView.Adapter and RecyclerViewScrollbar.ValueLabelListener
- *   - Demonstrate that you can override the OnScrollListener open class as usual
- *   - In the library package maybe the OnScrollListener can have its own file
- *   - The ScrollBar is only compatible with androidx.recyclerview.widget.RecyclerView
- *   - The RecyclerView must be assigned to the recyclerView variable or else scroll actions will not propagate
- *      Do this using code like binding.scrollBar.recyclerView = binding.recyclerView
- *
- *  BENEFITS OF THE LIBRARY:
- *   - The scrollbar thumb always has a minimum height (unlike the default fast scroll thumb, which
- *   can become too small when the RecyclerView has lots of content. This is a known issue that has been
- *   unresolved for years https://issuetracker.google.com/issues/64729576)
- *
  * @constructor Construct an instance of the scrollbar by supplying the context and attribute set required
  * for the layout editor to manage the View.
  *
