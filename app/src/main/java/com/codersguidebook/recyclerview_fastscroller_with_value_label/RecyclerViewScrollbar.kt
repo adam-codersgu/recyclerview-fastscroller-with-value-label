@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.color.MaterialColors
+import com.google.android.material.R.attr
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
@@ -105,7 +106,7 @@ class RecyclerViewScrollbar(context: Context, attrs: AttributeSet) : View(contex
                     DEFAULT_THUMB_AND_TRACK_WIDTH
                 ).roundToInt()
                 val defaultTrackColour =
-                    MaterialColors.getColor(context, R.attr.colorOnSurface, Color.GRAY)
+                    MaterialColors.getColor(context, attr.colorOnSurface, Color.GRAY)
                 // 30% Alpha
                 val defaultTrackColour30 =
                     MaterialColors.compositeARGBWithAlpha(defaultTrackColour, 77)
@@ -114,7 +115,7 @@ class RecyclerViewScrollbar(context: Context, attrs: AttributeSet) : View(contex
                 }
 
                 val defaultThumbOffColour =
-                    MaterialColors.getColor(context, R.attr.colorOnSurface, Color.LTGRAY)
+                    MaterialColors.getColor(context, attr.colorOnSurface, Color.LTGRAY)
                 val defaultThumbOffColour84 =
                     MaterialColors.compositeARGBWithAlpha(defaultThumbOffColour, 214)
                 thumbOffColour = getInt(R.styleable.RecyclerViewScrollbar_thumbOffColor, defaultThumbOffColour84)
@@ -124,7 +125,7 @@ class RecyclerViewScrollbar(context: Context, attrs: AttributeSet) : View(contex
                     R.styleable.RecyclerViewScrollbar_thumbMinHeight,
                     thumbAndTrackWidth * 4f).roundToInt()
                 val defaultThumbOnColour =
-                    MaterialColors.getColor(context, R.attr.colorSecondary, Color.CYAN)
+                    MaterialColors.getColor(context, attr.colorSecondary, Color.CYAN)
                 thumbOnColour = getInt(R.styleable.RecyclerViewScrollbar_thumbOnColor, defaultThumbOnColour)
 
                 valueLabelWidth = getDimension(
@@ -136,7 +137,7 @@ class RecyclerViewScrollbar(context: Context, attrs: AttributeSet) : View(contex
                 }
 
                 val defaultTextColour =
-                    MaterialColors.getColor(context, R.attr.textFillColor, Color.BLACK)
+                    MaterialColors.getColor(context, attr.colorOnSecondary, Color.BLACK)
                 textPaint.apply {
                     color = getInt(R.styleable.RecyclerViewScrollbar_valueLabelTextColor, defaultTextColour)
                     style = Paint.Style.FILL

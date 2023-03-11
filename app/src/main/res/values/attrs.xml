@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RecyclerViewScrollbar">
+        <attr name="thumbAndTrackWidth" format="dimension" />
+        <attr name="thumbMinHeight" format="dimension" />
+        <attr name="thumbOffColor" format="reference|color" />
+        <attr name="thumbOnColor" format="reference|color" />
+
+        <attr name="trackColor" format="reference|color" />
+
+        <attr name="valueLabelBackgroundColor" format="reference|color" />
+        <attr name="valueLabelTextColor" format="reference|color" />
+        <attr name="valueLabelTextSize" format="dimension" />
+        <attr name="valueLabelWidth" format="dimension" />
+    </declare-styleable>
+</resources>
