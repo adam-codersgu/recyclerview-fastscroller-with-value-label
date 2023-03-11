@@ -2,6 +2,30 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
+    id 'signing'
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.codersguidebook'
+    PUBLISH_VERSION = '1.0'
+    PUBLISH_ARTIFACT_ID = 'recyclerview_fastscroller_with_value_label'
+}
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    if (project.plugins.findPlugin("com.android.library")) {
+        // For Android libraries
+        from android.sourceSets.main.java.srcDirs
+        from android.sourceSets.main.kotlin.srcDirs
+    } else {
+        // For pure Kotlin libraries
+        from sourceSets.main.java.srcDirs
+        from sourceSets.main.kotlin.srcDirs
+    }
+}
+
+artifacts {
+    archives androidSourcesJar
 }
 
 android {
@@ -18,13 +42,14 @@ android {
             minCompileSdk = 29
         }
 
+        consumerProguardFiles 'proguard-android-optimize.txt'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -39,6 +64,9 @@ android {
         enable = true
     }
 
+    group = PUBLISH_GROUP_ID
+    version = PUBLISH_VERSION
+
     publishing {
         singleVariant('release') {
             withSourcesJar()
@@ -46,13 +74,47 @@ android {
 
         publications {
             release(MavenPublication) {
-                groupId = 'com.codersguidebook'
-                artifactId = 'recyclerview_fastscroller_with_value_label'
-                version = '1.0'
+                groupId PUBLISH_GROUP_ID
+                artifactId PUBLISH_ARTIFACT_ID
+                version PUBLISH_VERSION
 
-                afterEvaluate {
+                if (project.plugins.findPlugin("com.android.library")) {
                     from components.release
+                } else {
+                    from components.java
                 }
+
+                pom {
+                    name = 'RecyclerView fast scroller with value label.'
+                    description = 'A Kotlin-based Android library that creates a fast scroller for RecyclerView widgets. ' +
+                            'The RecyclerView features a draggable thumb and customisable value label.'
+                    url = 'http://www.example.com/library' // TODO
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'codersgu'
+                            name = 'Adam Hawke'
+                            email = 'hello@codersguidebook.com'
+                        }
+                    }
+                    scm {
+                        connection = 'https://github.com/adam-codersgu/recyclerview-fastscroller-with-value-label'
+                        developerConnection = 'git@github.com:adam-codersgu/recyclerview-fastscroller-with-value-label.git'
+                        url = 'http://codersguidebook.com/my-library/' // TODO
+                    }
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                name = 'myrepo'
+                url = "${project.buildDir}/repo"
             }
         }
     }
