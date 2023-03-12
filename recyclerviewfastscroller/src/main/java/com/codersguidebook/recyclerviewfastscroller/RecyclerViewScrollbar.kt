@@ -1,4 +1,4 @@
-package com.codersguidebook.recyclerview_fastscroller_with_value_label
+package com.codersguidebook.recyclerviewfastscroller
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -10,8 +10,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.color.MaterialColors
 import com.google.android.material.R.attr
+import com.google.android.material.color.MaterialColors
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt

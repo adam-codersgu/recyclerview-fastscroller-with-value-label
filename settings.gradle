@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "recyclerview-fastscroller-with-value-label"
-include ':app'
+include ':recyclerviewfastscroller'
