@@ -1,4 +1,4 @@
-package com.codersguidebook.recyclerview_fastscroller_with_value_label
+package com.codersguidebook.recyclerviewfastscroller
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -10,8 +10,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.color.MaterialColors
 import com.google.android.material.R.attr
+import com.google.android.material.color.MaterialColors
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
@@ -311,7 +311,7 @@ class RecyclerViewScrollbar(context: Context, attrs: AttributeSet) : View(contex
      * Determine the appropriate height of the scrollbar thumb.
      *
      * @return An integer representing the height to use for the thumb. The height
-     * will always be equal to or greater than $minimumThumbHeight
+     * will always be equal to or greater than $thumbMinHeight
      */
     private fun getThumbHeight(): Int {
         val viewHeightProportionOfContentHeight = measuredHeight.toFloat() /
