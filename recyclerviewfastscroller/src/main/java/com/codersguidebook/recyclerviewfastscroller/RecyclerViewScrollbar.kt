@@ -311,7 +311,7 @@ class RecyclerViewScrollbar(context: Context, attrs: AttributeSet) : View(contex
      * Determine the appropriate height of the scrollbar thumb.
      *
      * @return An integer representing the height to use for the thumb. The height
-     * will always be equal to or greater than $minimumThumbHeight
+     * will always be equal to or greater than $thumbMinHeight
      */
     private fun getThumbHeight(): Int {
         val viewHeightProportionOfContentHeight = measuredHeight.toFloat() /
