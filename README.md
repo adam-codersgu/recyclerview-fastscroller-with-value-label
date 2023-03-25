@@ -15,7 +15,7 @@ The scrollBar is compatible with androidx.recyclerview.widget.RecyclerView widge
 
 * Smooth fast-scrolling scrollbar with a draggable thumb and optional value label.
 * The scrollbar is hidden with a fade animation when inactive.
-* The scrollbar thumb size adjusts to reflect the size of the RecyclerView's content.
+* The scrollbar thumb height adjusts to reflect the size of the RecyclerView's content.
 * The scrollbar thumb has a customisable minimum height, which ensures the thumb does not contract excessively when the RecyclerView content is large (a [reported issue](https://issuetracker.google.com/issues/64729576) with the standard RecyclerView fastscrollEnabled feature)
 * Customisable colours and sizes
 
