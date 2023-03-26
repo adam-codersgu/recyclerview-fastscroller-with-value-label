@@ -25,6 +25,12 @@ A comprehensive tutorial describing how to use the library can be found on [Code
 
 ### Quick setup
 
+#### Add the following dependency to your module-level build.gradle file
+
+```
+implementation 'com.codersguidebook:recyclerview-fastscroller-with-value-label:1.0'
+```
+
 #### Add the scrollbar to an XML layout containing the target RecyclerView
 
 ```
