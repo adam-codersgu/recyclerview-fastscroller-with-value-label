@@ -89,3 +89,7 @@ class NamesAdapter : Adapter<ViewHolder>(), RecyclerViewScrollbar.ValueLabelList
 - **valueLabelTextColor** The colour of the value label's text.
 - **valueLabelTextSize** The text size used for the value label.
 - **valueLabelWidth** The width of the value label. The default width is 200dp.
+
+## Issue reporting and feedback
+
+Issues with the library can be raised by creating a new issue in this GitHub repository. Alternatively, you can send a message using the [contact form](https://codersguidebook.com/contact).
