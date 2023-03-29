@@ -73,7 +73,7 @@ class NamesAdapter : Adapter<ViewHolder>(), RecyclerViewScrollbar.ValueLabelList
 class NamesAdapter : Adapter<ViewHolder>(), RecyclerViewScrollbar.ValueLabelListener {
     var names = listOf<String>()
 
-    // The below implementation will display the first character of the name associated with the scroll position
+    // The below implementation will display the first character of the String associated with the scroll position
     override fun getValueLabelText(position: Int): String {
         return names[position][0].uppercase()
     }
