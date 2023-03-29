@@ -1,6 +1,6 @@
 # RecyclerView fast scroller with value label
 
-A Kotlin-based Android library that creates a fast scroller for RecyclerView widgets. The RecyclerView features a draggable thumb and customisable value label. A demo application using the scrollbar can be found [here](https://github.com/adam-codersgu/names).
+A Kotlin-based Android library that creates a fast scroller for RecyclerView widgets. The scrollbar features a draggable thumb and customisable value label. A demo application using the scrollbar can be found [here](https://github.com/adam-codersgu/names).
 
 <p align="center">
   <img src="/images/recyclerview-scrollbar-fast-scroller-value-label.gif" width="150" height="300" alt="recyclerview-scrollbar-fast-scroller-value-label.gif">
@@ -9,13 +9,13 @@ A Kotlin-based Android library that creates a fast scroller for RecyclerView wid
 ## Technical requirements
 
 The library supports Android SDKs 29-33.
-The scrollBar is compatible with androidx.recyclerview.widget.RecyclerView widgets.
+The scrollbar is compatible with androidx.recyclerview.widget.RecyclerView widgets.
 
 ## Benefits
 
-* Smooth fast-scrolling scrollbar with a draggable thumb and optional value label.
-* The scrollbar is hidden with a fade animation when inactive.
-* The scrollbar thumb height adjusts to reflect the size of the RecyclerView's content.
+* Smooth fast-scrolling scrollbar with a draggable thumb and an optional value label.
+* The scrollbar is hidden using a fade animation when inactive.
+* The scrollbar thumb height adjusts automatically based on the size of the RecyclerView's content.
 * The scrollbar thumb has a customisable minimum height, which ensures the thumb does not contract excessively when the RecyclerView content is large (a [reported issue](https://issuetracker.google.com/issues/64729576) with the standard RecyclerView fastscrollEnabled feature)
 * Customisable colours and sizes
 
@@ -53,7 +53,7 @@ implementation 'com.codersguidebook:recyclerview-fastscroller-with-value-label:1
 binding.scrollbar.recyclerView = binding.recyclerView
 binding.recyclerView.addOnScrollListener(RecyclerViewScrollbar.OnScrollListener(binding.scrollbar))
 ```
-*N.B. Click [here](https://codersguidebook.com/how-to-create-an-android-app/recyclerview-fast-scroller-with-value-label-library#apply-fastscroller-to-recyclerview) to read how to override the RecyclerViewScrollbar.OnScrollListener and add further actions to be performed during RecyclerView scroll events.*
+*N.B. Click [here](https://codersguidebook.com/how-to-create-an-android-app/recyclerview-fast-scroller-with-value-label-library#apply-fastscroller-to-recyclerview) to read how to override RecyclerViewScrollbar.OnScrollListener and add further actions to be performed during RecyclerView scroll events.*
 
 ### *Optional* Adding a value label to the scrollbar
 
@@ -73,6 +73,7 @@ class NamesAdapter : Adapter<ViewHolder>(), RecyclerViewScrollbar.ValueLabelList
 class NamesAdapter : Adapter<ViewHolder>(), RecyclerViewScrollbar.ValueLabelListener {
     var names = listOf<String>()
 
+    // The below implementation will display the first character of the name associated with the scroll position
     override fun getValueLabelText(position: Int): String {
         return names[position][0].uppercase()
     }
